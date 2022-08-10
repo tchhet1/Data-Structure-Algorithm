@@ -8,6 +8,7 @@ Output: true
 
 */
 
+/* 
 const isAnagram = (s, t) => {
     
     // sort the strings
@@ -18,4 +19,39 @@ const isAnagram = (s, t) => {
     
 return sortedS == sortedT;
     
+}; 
+*/
+
+const isAnagram = (s, t) => {
+    
+    if(s.length !== t.length) return false;
+    
+    let x = new Map();
+    let y = new Map();
+    
+    for(let i = 0; i < s.length; i++){
+        if(x.has(s[i])) { 
+            let val = x.get(s[i]);
+            x.set(s[i], val + 1);
+        } else {
+            x.set(s[i], 1) 
+        }
+        
+        if(y.has(t[i])) { 
+            let val = y.get(t[i]);
+            y.set(t[i], val + 1);
+        } else {
+            y.set(t[i], 1) 
+        }
+
+    }
+    
+    for(let char in x) {
+        if(x[char] !== y[char]) return false;
+    }
+
+   return true;    
+
 };
+
+isAnagram('hat', 'mat')
