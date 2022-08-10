@@ -46,11 +46,15 @@ const isAnagram = (s, t) => {
 
     }
     
-    for(let char in x) {
-        if(x[char] !== y[char]) return false;
-    }
+    var flag = true;
+    
+    y.forEach(([value, key])=>{
+            if(value !== x.get(key)){
+                flag = false;
+            }
+    })
 
-   return true;    
+   return flag;    
 
 };
 
