@@ -7,11 +7,19 @@ Output: [18,6,6,6,1,-1]
 //loop through the array elements
 //if conditiong to check if greater element exists
 const replaceElements = (arr) => {
-    let maxElement = Math.max(...arr);
-    let result = [];
-
-    for (let index = 0; index < arr.length; index++) {
-        const element = array[index];
-        if(element > ) 
+    let max = 0;
+    let result = [...arr];
+    result.shift();
+    
+    for(let i = 0; i < arr.length; i++){
+            if(i < (arr.length -1)){
+                arr[i] = Math.max(...result);
+                result.shift();
+            } else {
+                arr[i] = -1
+            }              
+        
     }
+    
+    return arr;
 }
