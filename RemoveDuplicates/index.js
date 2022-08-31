@@ -21,7 +21,7 @@ const removeDuplicates = (arr) => {
     let result = [];
 
     for(let i = 0; i < arr.length; i++){
-        if(result.indexOf(arr[i]) == -1){
+        if(result.indexOf(arr[i]) == i){
             result.push(arr[i])
         }
     }
