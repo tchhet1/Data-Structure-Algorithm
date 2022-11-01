@@ -21,6 +21,8 @@ const isValid = (s) => {
     if(s.length % 2 !== 0) return false;
        
     let stack = [];
+
+    
     for(let i = 0; i < s.length; i++){
         
         if(s[i] in brack){
@@ -39,4 +41,5 @@ const isValid = (s) => {
     } else {
         return false;   
     }
+
 };
