@@ -40,3 +40,33 @@ const twoSum = (nums, target) => {
     }
     
 };
+
+//Solution #2 Moving indices
+
+const twoSum2 = (arr, value) => {
+
+    arr.sort((a, b) =>  a - b);
+
+
+    let index1 = 0;
+    let index2 = arr.length - 1;
+    let sum = 0;
+    let result = [];
+
+    while(index1 !== index2){
+        sum = arr[index1] + arr[index2];
+
+        if(sum < value) {
+            index1++;
+        } else if(sum > value) {
+            index2--;
+        } else {
+            result.push(arr[index1]);
+            result.push(arr[index2]);
+            return result;
+        }
+    }
+    return false;
+
+
+}
