@@ -38,3 +38,24 @@ const isPalindrome = (s) => {
     return true;
     
 };
+
+
+
+//ANA - isPalindrome using recursion
+
+const validPalindrome = (str) => {
+  
+    if(str.length <= 1) return true;
+
+    let len = str.length;
+
+    if(str[0] == str[len -1]){
+        return validPalindrome(str.slice(1, -1));
+    }
+    return false;
+
+}
+
+
+
+
